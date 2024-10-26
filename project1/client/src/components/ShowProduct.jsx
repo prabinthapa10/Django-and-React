@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function ShowProduct() {
   const [product, setProduct] = useState([]);
@@ -18,6 +19,7 @@ export default function ShowProduct() {
       {product.map((data) => (
         <ul>
           <img src={data.product_image} alt="" />
+          <Link to={`/${data.id}`}>Show</Link>
         </ul>
       ))}
     </div>
